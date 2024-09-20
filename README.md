@@ -1,103 +1,56 @@
 ﻿# ELCFS Pipeline Readme
-
+Scripts for generating manuscript results
 
 ## Overview
+This pipeline predicts protein complexes by building protein-protein interaction models and assigning scores to as many pairs as possible from available expression or association data.  It then creates weighted graphs from which it identifies “clusters” with high node connectivity and subgraph cohesion.  The pipeline features a set of Jupyter notebooks that utilize “Google Colab” to harness Google’s powerful computing resources, also seamlessly integrated with GitHub, further benefiting greater accessibility.
 
+## Running the pipeline
+The results reflect the performance of a voting classifier committee that followed the manuscript’s eponymous approach on different pair sets as its feature-based composition expanded to accommodate more diverse sources of protein association and expression data.
 
-This pipeline predicts protein complexes by generating protein-protein interaction models and scoring all available protein pairs. To facilitate user-friendly cloud computing, it includes a library of Python scripts and a collection of Google Colab notebooks, which are also compatible with the Jupyter computing platform.
-
-
-## Manuscript Results
-
-
-The results presented in the manuscript were generated over two phases of pipeline development, each corresponding to different sets of proteins. Below are the primary sources of data used:
-
+Pair sets:
+- D17 (Drew et al., 2017 training and test sets merged)
+- LM19 (Lugo-Martinez et al., 2019 expanded pairs’ set)
+- PS24 (CORUM 3.0 human core set-generated)
 
 Protein Association Data: 
-  - Drew et al., 2017
-  - BioPlex 3.0 (Huttlin et al., 2021)
+- BioPlex 3.0 
+- hu.MAP 1.0, 2.0
 
+Protein Expression Data:
+- FANTOM5
+- GTEx (v7)
+- Lugo-Martinez et al., 2019 & 2021 
+- Ouyang et al., 2019 
+- SubCellBarCode 
+- Uhlén et al., 2015
 
-Protein Expression Data: 
-  - Lugo-Martinez et al., 2019 & 2021
-  - SubCellBarCode (Orre et al., 2019)
-  - FANTOM5 (Ouyang et al., 2014)
-  - Uhlén et al., 2015
-  - gTEX (Yizhak et al., 2019)
+### Pairsets D17 & LM19
+1. Use the following notebook to model interactions and generate pair scores:
+- ./google_colab_notebooks/PPI Prediction Performance Analysis v3.ipynb
 
+Note: For faster execution, n multiple instances of the notebook were generated, such that the parallel processing flags to the model training function were assigned to each integer between 0 and n-1.
+ 
+2. Use the following notebook to predict complex assemblies:
+- ./google_colab_notebooks/Generate complexes.ipynb
 
-## Pipeline Execution
+Note: Initially, threshold values along the interaction model’s F1-measure curve were selected manually to balance accuracy with processing time.
 
+### Pairsets PS24
+3. Use the following notebook to assemble the training data:
+- ./google_colab_notebooks/Construct feature matrix.ipynb
 
-### Preliminary Results
+4. Use the following notebook to create the models:
+- ./google_colab_notebooks/Build models.ipynb
 
+5. Use the following notebook to generate predictions: 
+- ./google_colab_notebooks/Make predictions.ipynb
 
-1. Model Interactions and Score Protein Pairs:
-   - Use the PPI Prediction Performance Analysis v3.ipynb notebook to model interactions and score all available protein pairs.
-   - For faster execution, enable parallel execution by making copies of the notebook and setting partition intervals for each copy.
+6. Use the following notebook to generate complexes:
+- ./google_colab_notebooks/Generate complexes.ipynb
 
-
-   ./google_colab_notebooks/PPI Prediction Performance Analysis v3.ipynb
-
-
-2. Predict Complex Assemblies:
-   - Use the Generate complexes.ipynb notebook to predict complex assemblies.
-   - Note: We manually selected thresholds between the interaction model’s F1-measure and values that provided manageable processing times.
-
-
-   ./google_colab_notebooks/Generate complexes.ipynb
-
-
-3. Prepare Precursors for Evaluation Functions:
-   - Use the complexPrediction_plusAnalysis.ipynb notebook to prepare precursors for evaluation functions.
-
-
-   ./google_colab_notebooks/complexPrediction_plusAnalysis.ipynb
-
-
-### Final Results
-
-
-1. Assemble Training Data:
-   - Use the Construct feature matrix.ipynb notebook to assemble the training data.
-
-
-     ./google_colab_notebooks/Construct feature matrix.ipynb
-
-
-2. Create Models:
-   - Use the Build models.ipynb notebook to create the models.
-   - Note: During Phase 1a, we made copies of the modeling notebook for each fold of cross-validation to take advantage of parallel execution while minimizing deviations from total pipeline automation.
-
-
-   ./google_colab_notebooks/Build models.ipynb
-
-
-3. Generate Predictions:
-   - Use the Make predictions.ipynb notebook to generate predictions.
-
-
-   ./google_colab_notebooks/Make predictions.ipynb
-
-
-4. Generate Complexes:
-   - Use the Generate complexes.ipynb notebook to generate complexes.
-
-
-   ./google_colab_notebooks/Generate complexes.ipynb
-
-
-5. Generate Precursors for Complex Evaluation:
-   - Use the Evaluate complexes helper.ipynb notebook to generate precursors for complex evaluation.
-
-
-   ./google_colab_notebooks/Evaluate complexes helper.ipynb
-
+7. Use the following notebook to generate precursors for complex evaluation:
+- ./google_colab_notebooks/Evaluate complexes helper.ipynb
 
 ### Analysis
-
-
-- Run the Analyze results.ipynb notebook to collect results from both phases and generate the manuscript’s figures and tables.
-
-
-  ./google_colab_notebooks/Analyze results.ipynb
+8. Run the following notebook to generate results, e.g., figures and tables, across the pair sets
+- ./google_colab_notebooks/Analyze results.ipynb
