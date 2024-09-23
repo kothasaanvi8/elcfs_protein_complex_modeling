@@ -13,19 +13,20 @@ print(cpu_count())
 #useful to keep track of sys vars so as to better monitor space remaining
 sysVars = list(globals().keys())
 
-rootDir = '/Users/wilkinsbusiness/Library/CloudStorage/GoogleDrive-elcfs.proteincomplex.modeling@gmail.com/My Drive/'
-workDir = './' #phase2 directory
-workDir_elcfs = rootDir + 'proteinPairs_complexMaps/' #modeling library
-workDir_ph1 = rootDir + 'Primary Research/JLMwSCBC_notebook/' #phase 1 directory
-workDir_other = rootDir + 'otherStudies/'
+rootDir = '/Users/wilkinsbusiness/Documents/GitHub/'
+workDir = rootDir + 'elcfs_protein_complex_modeling/' #phase2 directory
+workDir_elcfs = workDir + 'proteinPairs_complexMaps/' #modeling library
+workDir_ph1 = workDir + 'Primary Research/JLMwSCBC_notebook/' #phase 1 directory
+workDir_other = workDir + 'otherStudies/'
 
 sys.path.insert(0, rootDir)
-for p in workDir, workDir_elcfs, workDir_ph1, workDir_other: sys.path.append(p)
+for p in rootDir, workDir, workDir_elcfs, workDir_ph1, workDir_other: sys.path.append(p)
 from util import modelEvaluating
 from utils import operationsLocal as operations
 from utils import reference, alertMe
 pushoverKey_user = 'uith8rmy2npjj1oqpjwcanow3un984'
 pushoverAPI = 'aw4v3424kaznrw598r6qge9icddwg7'
+
 
 setupDir = workDir + 'setup/'
 refDir = workDir + 'srcData/'

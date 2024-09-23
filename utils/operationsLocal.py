@@ -7,7 +7,7 @@ from multiprocess import cpu_count, Pool
 import numpy as np
 import os
 import pandas as pd
-import pickle, requests
+import pickle, re, requests
 from requests.adapters import HTTPAdapter, Retry
 from sklearn.metrics import auc, precision_recall_curve
 from tqdm import tqdm as progressMonitor
@@ -123,3 +123,83 @@ def findDownloadables(url, keywords=None):
         filenames = [link for link in filenames if any([kw in link for kw in keywords])]
 
     return filenames
+
+def process_pattern(args):
+    patt, line = args
+    match = patt.search(line)
+    if match:
+        return [e for e in match.groups() if e and e != "'"]
+    else:
+        return []
+
+def find_saved_output_files(script_path):
+
+    if not os.path.isfile(script_path):
+        print(f"Script not found: {script_path}")
+
+    """
+    patts:
+    open('filename') or open(var)
+    pandas' to_csv('filename') or to_csv(var)
+    pandas' to_excel('filename') or to_excel(var)
+    pickle.dump(data, 'filename') or pickle.dump(data, var)
+    numpy's np.save('filename') or np.save(var)
+    numpy's np.savetxt('filename') or np.savetxt(var)
+    matplotlib's plt.savefig('filename') or plt.savefig(var)
+    imageio's imsave('filename') or imsave(var)
+    PIL's Image.save('filename') or Image.save(var)
+    """
+
+    # patts for common file-saving methods in .py
+    patts = [
+        re.compile(r"open\(([\'\"]?)(.*?)\1[,\)]"),
+        re.compile(r"to_csv\(([\'\"]?)(.*?)\1[,\)]"),
+        re.compile(r"to_excel\(([\'\"]?)(.*?)\1[,\)]"),
+        re.compile(r"pickle\.dump\([^,]+,\s*(['\"]?)(.*?)\1[,\)]"),
+        re.compile(r"np\.save\(([\'\"]?)(.*?)\1[,\)]"),
+        re.compile(r"np\.savetxt\(([\'\"]?)(.*?)\1[,\)]"),
+        re.compile(r"plt\.savefig\(([\'\"]?)(.*?)\1[,\)]"),
+        re.compile(r"imageio\.imsave\(([\'\"]?)(.*?)\1[,\)]"),
+        re.compile(r"Image\.save\(([\'\"]?)(.*?)\1[,\)]")
+    ]
+
+    """
+    # patts for common file-saving methods in .json (jupyter notebook files)
+    patts = [
+        re.compile(r".*open\((\"|\')?(.*?)\1[,\)]"),
+        re.compile(r".*to_csv\((\"|\')?(.*?)\1[,\)]"),
+        re.compile(r".*to_excel\((\"|\')?(.*?)\1[,\)]"),
+        re.compile(r".*pickle\.dump\([^,]+,\s*(\"|\')?(.*?)\1[,\)]"),
+        re.compile(r".*np\.save\((\"|\')?(.*?)\1[,\)]"),
+        re.compile(r".*np\.savetxt\((\"|\')?(.*?)\1[,\)]"),
+        re.compile(r".*plt\.savefig\((\"|\')?(.*?)\1[,\)]"),
+        re.compile(r".*imageio\.imsave\((\"|\')?(.*?)\1[,\)]"),
+        re.compile(r".*Image\.save\((\"|\')?(.*?)\1[,\)]")
+    ]
+    """
+
+    # Checks for jupyter notebook file
+    if script_path.endswith('.ipynb'):
+        with open(script_path, 'r') as f:
+            notebook_data = json.load(f)
+
+        # Access different parts of the notebook
+        cells = notebook_data['cells']
+        lines = \
+            flatten([[l for l in cell['source']]
+                          for cell in cells if cell['cell_type'] == 'code'])
+
+  # Checks for .py file
+    else:
+        with open(script_path, 'r') as file:
+            lines = file.readlines()
+
+    print('pooling...')
+    numWorkers = cpu_count() - 1
+    with Pool(numWorkers) as pool:
+        output_files = list(progressMonitor(
+            pool.imap(process_pattern,
+                      [(patt, line) for patt in patts for line in lines]),
+            total=len([(patt, line) for patt in patts for line in lines])))
+
+    return  flatten(output_files)

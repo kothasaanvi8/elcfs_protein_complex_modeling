@@ -12,13 +12,13 @@ from sklearn.metrics import auc, average_precision_score, precision_recall_curve
 import subprocess, sys
 from tqdm import tqdm as progressMonitor
 
-workDir = './'
-rootDir = '/Users/wilkinsbusiness/Library/CloudStorage/GoogleDrive-elcfs.proteincomplex.modeling@gmail.com/My Drive/'
-workDir_elcfs = rootDir + 'proteinPairs_complexMaps/' #modeling library
-workDir_ph1 = rootDir + 'Primary Research/JLMwSCBC_notebook/' #phase 1 directory
-workDir_other = rootDir + 'otherStudies/'
+rootDir = '/Users/wilkinsbusiness/Documents/GitHub/'
+workDir = rootDir + 'elcfs_protein_complex_modeling/'
+workDir_elcfs = workDir + 'proteinPairs_complexMaps/' #modeling library
+workDir_ph1 = workDir + 'Primary Research/JLMwSCBC_notebook/' #phase 1 directory
+workDir_other = workDir + 'otherStudies/'
 
-for p in workDir_elcfs, workDir_ph1, workDir_other: sys.path.append(p)
+for p in rootDir, workDir, workDir_elcfs, workDir_ph1, workDir_other: sys.path.append(p)
 from util import modelEvaluating
 from utils import operationsLocal as operations
 from utils import reference, alertMe
@@ -26,6 +26,7 @@ print(cpu_count())
 sysVars = list(globals().keys())
 pushoverKey_user = 'uith8rmy2npjj1oqpjwcanow3un984'
 pushoverAPI = 'aw4v3424kaznrw598r6qge9icddwg7'
+
 
 setupDir = workDir + 'setup/'
 refDir = workDir + 'srcData/'
