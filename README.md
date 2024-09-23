@@ -34,23 +34,30 @@ Moreover, Google Colab is seamlessly integrated with GitHub, further benefiting 
 Note: Any changes must be saved. Furthermore, resources are not guaranteed at the free use level.
 
 ## <u>Run the pipeline</u>
-*Assemble pair sets, pool data sources and construct the feature matrix.*
-1.  Construct feature matrix.ipynb
+1.  Construct feature matrix.ipynb\
+*Assembles pair sets, pool data sources, and construct the feature matrix.*
 
-*Generate RF models.*
-2.  Build models.ipynb
+2.  Build models.ipynb\
+*Generates RF models.*
 
-*Generate scores for protein pairs.*
-3.  Make predictions.ipynb
+3.  Make predictions.ipynb\
+*Generates scores for protein pairs.*
 
-*Generate cell-line specific scores predictions for protein pairs.*
-4.  Make predictions-CellSpecific.ipynb
+4.  Make predictions-CellSpecific.ipynb\
+*Generates scores for protein pairs.*
 
-*Generate protein complex predictions.*
-5.  Generate complexes.ipynb
+5.  Generate complexes.ipynb\
+*Generates protein complex predictions.*
 
-*Generate precursors to evaluation of protein complex predictions.*
-6.  Evaluate complexes helper.ipynb
+6.  Evaluate complexes helper.ipynb\
+*Generates precursors to evaluation of protein complex predictions.*
 
-*Run the following notebook to generate results, e.g., figures and tables, across the pair sets.*
-7.  Analyze Results.ipynb
+7.  Analyze Results.ipynb\
+*Generates results, e.g., figures and tables, across the pair sets.*
+
+
+
+
+
+
+
