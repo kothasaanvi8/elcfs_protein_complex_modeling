@@ -1,3 +1,6 @@
 .DS_Store
 .idea
 /google_colab_notebooks/.ipynb_checkpoints/
+google_colab_notebooks/.DS_Store
+featureData/.DS_Store
+.DS_Store
