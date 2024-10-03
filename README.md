@@ -1,5 +1,3 @@
-﻿Here’s an improved version of the README file:
-
 ELCFS Pipeline - README
 
 Overview
