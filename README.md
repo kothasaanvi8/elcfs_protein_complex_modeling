@@ -31,18 +31,17 @@ for computational tasks. Google Colab integrates with GitHub for seamless access
 can be run independently, cloud computing is ideal for handling the pipeline’s computational needs.
 
 Steps to Run the Pipeline in Google Colab:
-
-	1.	Navigate to the notebook file in the GitHub repository and copy its URL.
-	2.	Open Google Colab.
-	3.	In the File menu, select “Open Notebook,” then click the GitHub tab.
+	1.	Open Google Colab @ "https://colab.research.google.com/"
+	2.	In the File menu, select “Open Notebook” 
+    3.  On the subsequent GUI that pops up, select the "GitHub" tab from the sidebar on the left.
 	4.	In the GitHub search bar, enter the following repository: GaryWilkins/elcfs_protein_complex_modeling.
-	5.	Choose the notebook you want to open and run, starting with the first and working sequentially through the set. Descriptions of the notebooks are provided below.
-	6.	Note: Google Colab does not permanently save outputs. Connect a Google Drive account when prompted to save results. Additionally, Google Colab’s free-tier resources are limited, and you may need a subscription for more intensive computations.
+	5.	Run the notebooks in order as they are numbered. Descriptions of the notebooks are provided below.
 
-Pipeline Execution
+	Notes: 
+    i)  Google Colab does not provide persistent storage outputs, thus before disconnecting the runtime, outputs must be saved either locally or to the user's cloud storage, e.g., Google Drivee. 
+    ii) Google Colab’s free-tier resources are limited; you may need a subscription for more intensive computations.
 
 Notebooks:
-
 	1.	Construct feature matrix.ipynb
             - Combines pair sets, pools data sources, and constructs the feature matrix.
 	2.	Build models.ipynb
@@ -57,6 +56,3 @@ Notebooks:
             - Prepares data for evaluating protein complex predictions.
 	7.	Analyze Results.ipynb
             - Generates results, including figures and tables, for the pair sets.
-
-This version clarifies the instructions and content, making it easier for users to understand the purpose of the
-pipeline, run it in Google Colab, and navigate the various notebooks.
