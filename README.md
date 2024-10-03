@@ -1,4 +1,4 @@
-ELCFS Pipeline - README
+﻿ELCFS Pipeline - README
 
 Overview
 
@@ -55,7 +55,7 @@ Notebooks:
 	6.	Evaluate complexes helper.ipynb
             - Prepares data for evaluating protein complex predictions.
 	7.	Analyze Results.ipynb
-- Generates results, including figures and tables, for the pair sets.
+            - Generates results, including figures and tables, for the pair sets.
 
 This version clarifies the instructions and content, making it easier for users to understand the purpose of the
 pipeline, run it in Google Colab, and navigate the various notebooks.
