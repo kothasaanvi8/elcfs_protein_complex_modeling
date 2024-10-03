@@ -23,8 +23,9 @@ GitHub for seamless access to repositories.
 	5. Run the notebooks, described subsequently, in order as numbered.
 	
 	Notes:
-	i) Google Colab does not provide persistent storage outputs, thus before disconnecting the runtime, outputs must be saved either locally or to the user's cloud storage, e.g., Google Drivee.
-	ii) Google Colab’s free-tier resources are limited; you may need a subscription for more intensive computations.
+	i)   Google Colab does not provide persistent storage outputs, thus before disconnecting the runtime, outputs must be saved either locally or to the user's cloud storage, e.g., Google Drivee.
+	ii)  Google Colab’s free-tier resources are limited; you may need a subscription for more intensive computations.
+    iii) Some pipeline outputs exceed GitHub repository limits; they are available in the directory here: https://tinyurl.com/elcfsModeling 
 
 ### Notebooks:
 
