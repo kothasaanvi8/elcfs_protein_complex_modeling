@@ -8,20 +8,6 @@ The pipeline employs the voting classifier committee to assign an interaction sc
 weighted mean of the feature-partition based Random Forest Models for which there was available data.
 As the feature composition grows, the pipeline incorporates a wider array of protein association and expression data.
 
-*Protein Association Data*:
-
-	- BioPlex 3.0 (Huttlin et al., 2017)
-	- hu.MAP 1.0, 2.0 (Drew et al., 2017; Huttlin et al., 2021)
-
-*Protein Expression Data*:
-
-	- FANTOM5 (Lizio et al., 2015)
-	- GTEx (v7) (GTEx Consortium, 2017)
-	- Lugo-Martinez et al., 2019 & 2021 (Lugo-Martinez et al., 2019; 2021)
-	- Ouyang et al., 2019 (Ouyang et al., 2019)
-	- SubCellBarCode (Baran-Gale et al., 2020)
-	- Uhlén et al., 2015 (Uhlén et al., 2015)
-
 ### Google Colab Instructions
 
 The pipeline includes several Jupyter notebooks located in the google_colab_notebooks directory. These notebooks use 
@@ -63,8 +49,26 @@ Prepares data for evaluating protein complex predictions.
 	7. Analyze Results.ipynb
 Generates results, including figures and tables, for the pair sets.
 
-### Software packages used for clustering pairs into complexes
 
-	- ClusterOne [https://paccanarolab.org/cluster-one/] (Nepusz, T., et al., 2012)
+### References
 
-	- MCL -- Markov Clustering Algorithm [https://micans.org/mcl/] (Enright, A. J., et al., 2002)
+#### Data
+    Protein Association Data:
+	- BioPlex 3.0 (Huttlin et al., 2017)
+	- hu.MAP 1.0, 2.0 (Drew et al., 2017; Huttlin et al., 2021)
+
+    Protein Expression Data:
+	- FANTOM5 (Lizio et al., 2015)
+	- GTEx (v7) (GTEx Consortium, 2017)
+	- Lugo-Martinez et al., 2019 & 2021 (Lugo-Martinez et al., 2019; 2021)
+	- Ouyang et al., 2019 (Ouyang et al., 2019)
+	- SubCellBarCode (Baran-Gale et al., 2020)
+	- Uhlén et al., 2015 (Uhlén et al., 2015)
+
+#### Software
+
+	- ClusterOne (Nepusz, T., et al., 2012)
+      https://paccanarolab.org/cluster-one/
+
+	- MCL -- Markov Clustering Algorithm (Enright, A. J., et al., 2002)
+      https://micans.org/mcl/
