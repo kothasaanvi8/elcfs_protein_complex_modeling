@@ -32,12 +32,11 @@ can be run independently, cloud computing is ideal for handling the pipeline’s
 
 Steps to Run the Pipeline in Google Colab:
 
-	1.	Navigate to the notebook file in the GitHub repository and copy its URL.
-	2.	Open Google Colab.
-	3.	In the File menu, select “Open Notebook,” then click the GitHub tab.
-	4.	In the GitHub search bar, enter the following repository: GaryWilkins/elcfs_protein_complex_modeling.
-	5.	Choose the notebook you want to open and run, starting with the first and working sequentially through the set. Descriptions of the notebooks are provided below.
-	6.	Note: Google Colab does not permanently save outputs. Connect a Google Drive account when prompted to save results. Additionally, Google Colab’s free-tier resources are limited, and you may need a subscription for more intensive computations.
+	1.	Open Google Colab.
+	2.	In the File menu, select “Open Notebook,” then click the GitHub tab.
+	3.	In the GitHub search bar, enter the following repository: GaryWilkins/elcfs_protein_complex_modeling.
+	4.	Choose the notebook you want to open and run, starting with the first and working sequentially through the set. Descriptions of the notebooks are provided below.
+	5.	Note: Google Colab does not permanently save outputs. Connect a Google Drive account when prompted to save results. Additionally, Google Colab’s free-tier resources are limited, and you may need a subscription for more intensive computations.
 
 Pipeline Execution
 
