@@ -49,10 +49,10 @@ Prepares data for evaluating protein complex predictions.
 	7. Analyze Results.ipynb
 Generates results, including figures and tables, for the pair sets.
 
-
 ### References
 
-#### Data
+***Data***
+
     Protein Association Data:
 	- BioPlex 3.0 (Huttlin et al., 2017)
 	- hu.MAP 1.0, 2.0 (Drew et al., 2017; Huttlin et al., 2021)
@@ -65,7 +65,7 @@ Generates results, including figures and tables, for the pair sets.
 	- SubCellBarCode (Baran-Gale et al., 2020)
 	- Uhlén et al., 2015 (Uhlén et al., 2015)
 
-#### Software
+***Software***
 
 	- ClusterOne (Nepusz, T., et al., 2012)
       https://paccanarolab.org/cluster-one/
