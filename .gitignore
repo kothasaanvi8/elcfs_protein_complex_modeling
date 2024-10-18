@@ -1,6 +1,9 @@
 .DS_Store
+*/.DS_Store
+*/*/.DS_Store
+/google_colab_notebooks/.ipynb_checkpoints
 .idea
-/google_colab_notebooks/.ipynb_checkpoints/
-google_colab_notebooks/.DS_Store
-featureData/.DS_Store
-.DS_Store
+utils/templateLocal2.py
+utils/templateLocal.py
+utils/operationsLocal.py
+utils/operationsLocal.py

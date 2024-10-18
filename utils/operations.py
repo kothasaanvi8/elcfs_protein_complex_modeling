@@ -72,10 +72,13 @@ def mapProts(ids, idsFmt, targetFmt, printFormats=False):
 
 #useful for mergers and other database-like operations in which ID order doesn't matter,
 # e.g., [id1, id2] vs [id2, id1]
-def freezePairs(df, col1='id1', col2='id2', pool=False):
+def freezePairs(df, col1='id1', col2='id2', pool=False, numWorkers=None):
     if pool:
         print('pooling...')
-        numWorkers = cpu_count() - 1
+
+        if numWorkers is None:
+            numWorkers = cpu_count() - 1
+
         with Pool(numWorkers) as pool:
             pairs = [[row[col1], row[col2]] for _, row in df.iterrows()]
             pairsFrozen = list(progressMonitor(pool.imap(frozenset, pairs), total=len(pairs)))
