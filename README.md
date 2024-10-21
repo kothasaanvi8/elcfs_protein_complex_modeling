@@ -26,7 +26,12 @@ clusters characterized by high node connectivity and subgraph cohesion.
 - **`manuscriptGraphics/`**: Final results, including figures and CSV files from manuscript
 
 ### Run the pipeline (Notebooks, input and output files)
-For each notebook, select *Run all* from *Runtime* in the top menu.  For generating specific results, use the input and output files in the pubic Google directory as specified below for the notebook of interest. 
+- See [Using Google Colab with GitHub](https://colab.research.google.com/github/googlecolab/colabtools/blob/main/notebooks/colab-github-demo.ipynb) to learn how to load and run public notebooks directly from GitHub
+- The root directory is set to `/content/drive/My Drive/`. Please ensure that this directory is correctly set to access your data.
+- Colab offers resources for free, but runtimes are neither guaranteed nor unlimited, so purchasing a plan may be necessary.
+- Data storage is temporary; therefore, results should be saved before disconnecting from Colab or terminating a session.
+
+For each notebook, select *Run all* from *Runtime* in the top menu. To generate specific results, use the input and output files available in the [pubic Google directory](https://drive.google.com/drive/folders/1OEa0NVYCYnhOZmRa_pycIlpNx9ySJIea?usp=drive_link) as specified below for the notebook of interest.
 
 **1. Construct feature matrix.ipynb**
 - **Purpose**: Assemble pairsets, import and generate features from original data sources
@@ -93,12 +98,6 @@ For each notebook, select *Run all* from *Runtime* in the top menu.  For generat
   `complexPredictions/clusterONE_MCL_predictions_gridSearch*.pkl`
 - **Outputs**:
   - Final results: `manuscriptGraphics/*`
-
-**Notes:**
-- See [Using Google Colab with GitHub](https://colab.research.google.com/github/googlecolab/colabtools/blob/main/notebooks/colab-github-demo.ipynb) to learn how to load and run public notebooks directly from GitHub
-- The root directory is set to `/content/drive/My Drive/`. Please ensure that this directory is correctly set to access your data.
-- Colab offers resources for free, but runtimes are neither guaranteed nor unlimited, so purchasing a plan may be necessary.
-- Data storage is temporary; therefore, results should be saved before disconnecting from Colab or terminating a session.
 
 ### References
 **Data and Software**:
