@@ -1,37 +1,51 @@
 # README
 
-### Overview
+## Overview
 This pipeline predicts protein complexes by modeling protein-protein interactions and assigning scores to various
 protein pairs using available association and expression data. It constructs weighted graphs and then identifies
 clusters characterized by high node connectivity and subgraph cohesion.
 
 ### Key files of interest
-- [pair probability scores](https://drive.google.com/file/d/1Cn5zRitrl4i1S_WU2DBKCpR1Aj0_bLmb/view?usp=sharing)
-- [predicted clusters](https://drive.google.com/file/d/1-INlBd1bCZiYBd7vwJqvjYiBB3QpEoNK/view?usp=sharing)
-- [Entrez to UniProt ID mapper](https://drive.google.com/file/d/1tT28krOYbgxQ2S3RtSvuA6cG2SA91AN0/view?usp=sharing)
-- [NCI 60 non- and cell-specific features](https://drive.google.com/file/d/1-A66udgX7YWC-Oh7luKY5SzJuhKjPDKR/view?usp=sharing)
+- <span style="font-weight: normal;">[pair probability scores](https://drive.google.com/file/d/1Cn5zRitrl4i1S_WU2DBKCpR1Aj0_bLmb/view?usp=sharing)</span>
+- <span style="font-weight: normal;">[predicted clusters](https://drive.google.com/file/d/1-INlBd1bCZiYBd7vwJqvjYiBB3QpEoNK/view?usp=sharing)</span>
+- <span style="font-weight: normal;">[Entrez to UniProt ID mapper](https://drive.google.com/file/d/1tT28krOYbgxQ2S3RtSvuA6cG2SA91AN0/view?usp=sharing)</span>
+- <span style="font-weight: normal;">[NCI 60 non- and cell-specific features](https://drive.google.com/file/d/1-A66udgX7YWC-Oh7luKY5SzJuhKjPDKR/view?usp=sharing)</span>
 
-### Directory organization:
-- **`utils`**: Python scripts
-- **`google_colab_notebooks`**: Jupyter notebooks for running the pipeline
-- **`CFinder-2.0.6--1448`**: Markov Clustering Algorithm (MCL) for clustering protein interactions
-- **`srcData`**: Source data for building the feature matrix
-- **`featureData`**: Features generated from protein- association and expression data
-- **`dataPartitions`**: Five-fold partitioned datasets generated for cross-validation training and testing
-- **`models`**: Trained models
-- **`modelPerformance`**: Model evaluation metrics, e.g., precision, recall, and F1 scores for models
-- **`predictions`**: Pairwise interaction scores
-- **`assemblyData`**: Intermediate data generated to facilitate and evaluate protein complex predictions
-- **`complexPredictions`**: Protein complex predictions
-- **`manuscriptGraphics`**: Final results, including figures and CSV files from manuscript
+### [GitHub repository](https://github.com/garywilkins/elcfs_protein_complex_modeling): <span style="font-weight: normal; font-size: 1em;">garywilkins/elcfs_protein_complex_modeling</span>
 
-### Run the pipeline (Notebooks, input and output files)
-- See [Using Google Colab with GitHub](https://colab.research.google.com/github/googlecolab/colabtools/blob/main/notebooks/colab-github-demo.ipynb) to learn how to load and run public notebooks directly from GitHub
-- The root directory is set to `/content/drive/My Drive`. Please ensure that this directory is correctly set to access your data.
-- Colab offers resources for free, but runtimes are neither guaranteed nor unlimited, so purchasing a plan may be necessary.
-- Data storage is temporary; therefore, results should be saved before disconnecting from Colab or terminating a session.
+### [Complete repository directory](https://drive.google.com/drive/folders/1OEa0NVYCYnhOZmRa_pycIlpNx9ySJIea?usp=drive_link): <span style="font-weight: normal; font-size: 1em;">contains Python script libraries, Colab/jupyter notebooks, and all generated files</span>
 
-For each notebook, select *Run all* from *Runtime* in the top menu. To generate specific results, use the input and output files available in the [pubic Google directory](https://drive.google.com/drive/folders/1OEa0NVYCYnhOZmRa_pycIlpNx9ySJIea?usp=drive_link) as specified below for the notebook of interest.
+### Directory organization: 
+- [utils](https://drive.google.com/drive/folders/1uTxp5JFcyc3ZuDj0Y2dj8H61KWbdavvt?usp=drive_link): Python scripts
+- [google_colab_notebooks](https://drive.google.com/drive/folders/1t_LPl1zaOkumbwkWCjw3zZ4TTroMkzWH?usp=drive_link): Jupyter notebooks to run the pipeline
+- [CFinder-2.0.6--1448](https://drive.google.com/drive/folders/1v2vkPTisRzkhYpw0knofvix4nYfVWH5g?usp=drive_link): Markov Clustering Algorithm (MCL) script for clustering protein interactions
+- [cluster_one-1.0.jar](https://drive.google.com/file/d/1v5qzD4x9a3Z_nhyYMqhfay43R5fTFfE1/view?usp=sharing): ClusterONE script for clustering protein interactions
+- [srcData](https://drive.google.com/drive/folders/1uRBDZmEyVQ7tMJGwATt3HAvUCA5i3UjD?usp=sharing): Raw data for constructing the aggregate feature matrix
+- [featureData](https://drive.google.com/drive/folders/1uKeFzRYbmWqB-Uj12LWMzTCsoh9X7hFd?usp=drive_link): Generated features from protein- association and expression data
+- [dataPartitions](https://drive.google.com/drive/folders/1uKAA-lPKHZ16NfGQ3Daff1_SpDXyXIJ3?usp=drive_link): Five-fold partitioned datasets generated for cross-validation training and testing
+- [models](https://drive.google.com/drive/folders/1vluMdzWFwDj3amFcsAuWMODswQzPxXtA?usp=drive_link): Trained Random Forest SciKit-Learn models, pickle files
+- [modelPerformance](https://drive.google.com/drive/folders/1cv9KvPHR-Ki8yzAqYOqYa31JlGSX3ER0?usp=drive_link): Model evaluation metrics, e.g., precision, recall, and F1 scores
+- [predictions](https://drive.google.com/drive/folders/1uGkJ9nt4os_8gi20hgkvY8gj3sh8KKZC?usp=drive_link): Scores for pairwise interactions
+- [assemblyData](https://drive.google.com/drive/folders/1157Db3XnN_cW281r5jzjS49BSqDJ8XP7?usp=drive_link): Intermediate files generated to facilitate the prediction of complexes
+- [complexPredictions](https://drive.google.com/drive/folders/1toyvOccqIr7IkaQoGo4ZDnpq5UZJf0N2?usp=drive_link): Predicted protein complexes
+- [manuscriptGraphics](https://drive.google.com/drive/folders/1ty2RRhuJV2BThuRYmCwO9xOXOvvq8GDh?usp=drive_link): Results: manuscript figures and CSV files (tables)
+
+### Running the pipeline
+See [Using Google Colab with GitHub](https://colab.research.google.com/github/googlecolab/colabtools/blob/main/notebooks/colab-github-demo.ipynb) to learn how to load and run public notebooks directly from GitHub.
+
+*Notes*
+- *Google provides resources for free, however, runtimes are neither guaranteed nor unlimited; additionally, freely available runtimes may lack the specific configurations necessary for running some of the notebooks due to high memory and computational parallel processing demands.  The purchase of a plan is likely required.*
+
+- *The root directory is set to /content/drive/My Drive.  Please ensure that this directory is correctly set to access your data.  Data storage is temporary; therefore, results should be saved before disconnecting from Colab or terminating a session.*
+
+*Directions for generating specific results/output files (rather than run the pipeline beginning to end):*
+1) Copy the GitHub repository directory to either your local drive or preferred cloud storage.  
+2) Refer above to *Directory Organization* and copy the input files associated with the desired results as specified below from the complete, publicly available directory.  
+3) Finally, select *Run all* from the *Runtime* menu located at the top left of the Google Colab notebook. 
+
+*Directions for running the pipeline from beginning to end:* 
+1) Copy the GitHub repository directory to either your local drive or preferred cloud storage. 
+2) For each notebook in the order shown below, select *Run all* from the *Runtime* menu located at the top left of the Google Colab notebook. 
 
 **1. Construct feature matrix.ipynb**
 - **Purpose**: Assemble pairsets, import and generate features from original data sources
