@@ -12,22 +12,22 @@ clusters characterized by high node connectivity and subgraph cohesion.
 - [NCI 60 non- and cell-specific features](https://drive.google.com/file/d/1-A66udgX7YWC-Oh7luKY5SzJuhKjPDKR/view?usp=sharing)
 
 ### Directory organization:
-- **`utils/`**: Python scripts
-- **`google_colab_notebooks/`**: Jupyter notebooks for running the pipeline
-- **`CFinder-2.0.6--1448/`**: Markov Clustering Algorithm (MCL) for clustering protein interactions
-- **`srcData/`**: Source data for building the feature matrix
-- **`featureData/`**: Features generated from protein- association and expression data
-- **`dataPartitions/`**: Five-fold partitioned datasets generated for cross-validation training and testing
-- **`models/`**: Trained models
-- **`modelPerformance/`**: Model evaluation metrics, e.g., precision, recall, and F1 scores for models
-- **`predictions/`**: Pairwise interaction scores
-- **`assemblyData/`**: Intermediate data generated to facilitate and evaluate protein complex predictions
-- **`complexPredictions/`**: Protein complex predictions
-- **`manuscriptGraphics/`**: Final results, including figures and CSV files from manuscript
+- **`utils`**: Python scripts
+- **`google_colab_notebooks`**: Jupyter notebooks for running the pipeline
+- **`CFinder-2.0.6--1448`**: Markov Clustering Algorithm (MCL) for clustering protein interactions
+- **`srcData`**: Source data for building the feature matrix
+- **`featureData`**: Features generated from protein- association and expression data
+- **`dataPartitions`**: Five-fold partitioned datasets generated for cross-validation training and testing
+- **`models`**: Trained models
+- **`modelPerformance`**: Model evaluation metrics, e.g., precision, recall, and F1 scores for models
+- **`predictions`**: Pairwise interaction scores
+- **`assemblyData`**: Intermediate data generated to facilitate and evaluate protein complex predictions
+- **`complexPredictions`**: Protein complex predictions
+- **`manuscriptGraphics`**: Final results, including figures and CSV files from manuscript
 
 ### Run the pipeline (Notebooks, input and output files)
 - See [Using Google Colab with GitHub](https://colab.research.google.com/github/googlecolab/colabtools/blob/main/notebooks/colab-github-demo.ipynb) to learn how to load and run public notebooks directly from GitHub
-- The root directory is set to `/content/drive/My Drive/`. Please ensure that this directory is correctly set to access your data.
+- The root directory is set to `/content/drive/My Drive`. Please ensure that this directory is correctly set to access your data.
 - Colab offers resources for free, but runtimes are neither guaranteed nor unlimited, so purchasing a plan may be necessary.
 - Data storage is temporary; therefore, results should be saved before disconnecting from Colab or terminating a session.
 
