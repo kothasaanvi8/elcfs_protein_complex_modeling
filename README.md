@@ -38,12 +38,12 @@ See [Using Google Colab with GitHub](https://colab.research.google.com/github/go
 
 - *The root directory is set to /content/drive/My Drive.  Please ensure that this directory is correctly set to access your data.  Data storage is temporary; therefore, results should be saved before disconnecting from Colab or terminating a session.*
 
-*Directions for generating specific results/output files (rather than run the pipeline beginning to end):*
+_Directions for generating specific results/output files_:
 1) Copy the GitHub repository directory to either your local drive or preferred cloud storage.  
 2) Refer above to *Directory Organization* and copy the input files associated with the desired results as specified below from the complete, publicly available directory.  
 3) Finally, select *Run all* from the *Runtime* menu located at the top left of the Google Colab notebook. 
 
-*Directions for running the pipeline from beginning to end:* 
+_Directions for running the pipeline from beginning to end_:
 1) Copy the GitHub repository directory to either your local drive or preferred cloud storage. 
 2) For each notebook in the order shown below, select *Run all* from the *Runtime* menu located at the top left of the Google Colab notebook. 
 
