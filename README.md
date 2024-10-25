@@ -92,7 +92,7 @@ _*Directories absent from the repo, due to GitHub storage constraints, e.g., fea
 - **Outputs**:
   - Final results: `manuscriptGraphics/*`
 
-### Alternatively, each notebook constitutes a module of the pipeline, thus enabling independent execution. To run a specific notebook, follow the subsequent steps.
+### Alternatively, to run a specific notebook, follow the subsequent steps.
 
 1) Identify the notebook for which the desired files are the output.  
 2) Copy the notebook's corresponding input files, and their directories, if absent from the aforementioned Google Drive folder to the directory specified under Pipeline Execution.  
