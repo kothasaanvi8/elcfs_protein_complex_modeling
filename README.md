@@ -13,15 +13,13 @@ This pipeline predicts protein complexes by modeling protein-protein interaction
 See [Using Google Colab with GitHub](https://colab.research.google.com/github/googlecolab/colabtools/blob/main/notebooks/colab-github-demo.ipynb)
 to learn how to load and run public notebooks directly from GitHub.
 
-    Note:
-      *Google provides free resources, but runtimes are temporary, neither guaranteed nor unlimited.
-      *Certain configurations may require a paid plan.
-      *All data is cleared after disconnecting/releasing the runtime. Save data to either a local drive or preferred cloud storage.
-
 To run the pipeline from start to finish, select *Run all* from the *Runtime* menu located at the top left of each each notebook listed in the order shown under Pipeline Execution.<br>
 
-    Notes:
-      *Directories absent from the repo, due to GitHub storage constraints, e.g., featureData, are created automatically during execution. 
+Note:
+*Google provides free resources, but runtimes are temporary, neither guaranteed nor unlimited.<br>
+*Certain configurations may require a paid plan.<br>
+*All data is cleared after disconnecting/releasing the runtime. Save data to either a local drive or preferred cloud storage.<br>
+*Directories absent from the repo, due to GitHub storage constraints, e.g., featureData, are created automatically during execution.<br>
 
 ### Pipeline Execution
 **i. Construct feature matrix.ipynb**
