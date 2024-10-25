@@ -1,7 +1,11 @@
 # README
 
 ## Overview
-This pipeline predicts protein complexes by modeling protein-protein interactions and assigning scores to various protein pairs using available association and expression data. It constructs weighted graphs and identifies clusters with high node connectivity and subgraph cohesion. The repository contains all necessary files and instructions to reproduce these results. Due to the size of certain generated results, they are stored in this [Google Drive folder](https://drive.google.com/drive/folders/1OEa0NVYCYnhOZmRa_pycIlpNx9ySJIea?usp=drive_link).
+This pipeline predicts protein complexes by combining protein association and expression data, modeling protein-protein interactions (PPI), and assigning interaction scores to as many protein pairs for which data is available. It then constructs weighted graphs and identifies clusters with high node connectivity and subgraph cohesion. Additionally, cell line-specific predictions are also generated, by substituting a subset of aggregate features with cell line-specific data and in turn the edge weights of identified clusters with the new scores. Its primary goal is to enable a more comprehensive mapping of the human proteome and show how complexes change across cell types.
+
+The main stages of the pipeline: constructing feature matrices, training random forest classifiers, scoring protein pairs, and generating clusters correspond to separate notebooks whose modularity  provides for the independent execution of each step. It is intended for computational biologists and bioinformaticians focusing on protein complex prediction and functional proteomics, especially those seeking insights into cell-specific differences in protein-protein interactions.
+
+Due to the size of certain generated results, they are stored in this [Google Drive folder](https://drive.google.com/drive/folders/1OEa0NVYCYnhOZmRa_pycIlpNx9ySJIea?usp=drive_link).
 
 ### Key files in the Google Drive directory expected to be of use from this project:
 - <span style="font-weight: normal;">[predictions.tsv.tar.bz2](https://drive.google.com/file/d/1Cn5zRitrl4i1S_WU2DBKCpR1Aj0_bLmb/view?usp=sharing)</span>: Predicted probabilities for protein pair interactions
