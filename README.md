@@ -4,10 +4,10 @@
 This pipeline predicts protein complexes by modeling protein-protein interactions and assigning scores to various protein pairs using available association and expression data. It constructs weighted graphs and identifies clusters with high node connectivity and subgraph cohesion. The repository contains all necessary files and instructions to reproduce these results. Due to the size of certain generated results, they are stored in this [Google Drive folder](https://drive.google.com/drive/folders/1OEa0NVYCYnhOZmRa_pycIlpNx9ySJIea?usp=drive_link).
 
 ### Key files in the Google Drive directory expected to be of use from this project:
-- <span style="font-weight: normal;">[pair probability scores](https://drive.google.com/file/d/1Cn5zRitrl4i1S_WU2DBKCpR1Aj0_bLmb/view?usp=sharing)</span>: Predicted probabilities for protein pair interactions
-- <span style="font-weight: normal;">[predicted clusters](https://drive.google.com/file/d/1-INlBd1bCZiYBd7vwJqvjYiBB3QpEoNK/view?usp=sharing)</span>: Clustered groups of proteins predicted to form complexes
-- <span style="font-weight: normal;">[Entrez to UniProt ID mapper](https://drive.google.com/file/d/1tT28krOYbgxQ2S3RtSvuA6cG2SA91AN0/view?usp=sharing)</span>: Mapping file to translate Entrez IDs to UniProt IDs
-- <span style="font-weight: normal;">[NCI 60 non- and cell-specific features](https://drive.google.com/file/d/1-A66udgX7YWC-Oh7luKY5SzJuhKjPDKR/view?usp=sharing)</span>: Cell line- and non-specific comparative features generated from protein and RNA expression in the NCI-60 Human Tumor Cell Lines Screen
+- <span style="font-weight: normal;">[predictions.tsv.tar.bz2](https://drive.google.com/file/d/1Cn5zRitrl4i1S_WU2DBKCpR1Aj0_bLmb/view?usp=sharing)</span>: Predicted probabilities for protein pair interactions
+- <span style="font-weight: normal;">[clustersELCFS_topParams.pkl](https://drive.google.com/file/d/1-INlBd1bCZiYBd7vwJqvjYiBB3QpEoNK/view?usp=sharing)</span>: Clustered groups of proteins predicted to form complexes
+- <span style="font-weight: normal;">[idmappingDF_Entrez->UniprotKB.pkl](https://drive.google.com/file/d/1tT28krOYbgxQ2S3RtSvuA6cG2SA91AN0/view?usp=sharing)</span>: Mapping file to translate Entrez IDs to UniProt IDs
+- <span style="font-weight: normal;">[nci60Feats_non+cellSpecific_resc.tsv.tar.bz2](https://drive.google.com/file/d/1-A66udgX7YWC-Oh7luKY5SzJuhKjPDKR/view?usp=sharing)</span>: Cell line- and non-specific comparative features generated from protein and RNA expression in the NCI-60 Human Tumor Cell Lines Screen
 
 ### How to run the pipeline
 See [Using Google Colab with GitHub](https://colab.research.google.com/github/googlecolab/colabtools/blob/main/notebooks/colab-github-demo.ipynb)
@@ -15,11 +15,11 @@ to learn how to load and run public notebooks directly from GitHub.
 
 To run the pipeline from start to finish, select *Run all* from the *Runtime* menu located at the top left of each each notebook listed in the order shown under Pipeline Execution.<br>
 
-Note:
-*Google provides free resources, but runtimes are temporary, neither guaranteed nor unlimited.<br>
-*Certain configurations may require a paid plan.<br>
-*All data is cleared after disconnecting/releasing the runtime. Save data to either a local drive or preferred cloud storage.<br>
-*Directories absent from the repo, due to GitHub storage constraints, e.g., featureData, are created automatically during execution.<br>
+Notes:<br>
+_*Google provides free resources, but runtimes are temporary, neither guaranteed nor unlimited._<br>
+_*Certain configurations may require a paid plan._<br>
+_*All data is cleared after disconnecting/releasing the runtime. Save data to either a local drive or preferred cloud storage._<br>
+_*Directories absent from the repo, due to GitHub storage constraints, e.g., featureData, are created automatically during execution_.<br>
 
 ### Pipeline Execution
 **i. Construct feature matrix.ipynb**
